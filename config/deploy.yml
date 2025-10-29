@@ -2,12 +2,12 @@
 service: doable
 
 # Name of the container image.
-image: your-user/doable
+image: estebanvargas0/doable
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 167.234.221.119
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -19,13 +19,13 @@ servers:
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: app.example.com
+  host: doable.estonoesterapia .com
 
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  username: your-user
+  username: estebanvargas0
 
   # Always use an access token rather than real password when possible.
   password:
@@ -65,7 +65,7 @@ aliases:
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
-  - "doable_storage:/rails/storage"
+  - "volume-nyc2-07:/rails/storage"
 
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
