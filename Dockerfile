@@ -46,8 +46,8 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-# This will automatically build Tailwind CSS as part of the asset pipeline
-RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production ./bin/rails assets:precompile
+# Skip Tailwind CSS build since we're using pre-built CSS from git
+RUN SECRET_KEY_BASE_DUMMY=1 SKIP_TAILWINDCSS_BUILD=1 RAILS_ENV=production ./bin/rails assets:precompile
 
 
 
