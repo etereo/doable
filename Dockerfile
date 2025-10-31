@@ -45,11 +45,9 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Build Tailwind CSS before asset precompilation
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails tailwindcss:build
-
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+# This will automatically build Tailwind CSS as part of the asset pipeline
+RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production ./bin/rails assets:precompile
 
 
 
