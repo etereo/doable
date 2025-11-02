@@ -36,3 +36,6 @@
 # Allow committing pre-built Tailwind CSS for Docker
 # /app/assets/builds/*
 # !/app/assets/builds/.keep
+
+# Ignore macOS system files
+.DS_Store
