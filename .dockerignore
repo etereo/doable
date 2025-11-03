@@ -32,9 +32,8 @@
 
 # Ignore assets.
 /node_modules/
-# Allow pre-built Tailwind CSS to be copied into Docker
-# /app/assets/builds/*
-# !/app/assets/builds/.keep
+/app/assets/builds/*
+!/app/assets/builds/.keep
 /public/assets
 
 # Ignore CI service files.

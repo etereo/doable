@@ -33,9 +33,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Allow committing pre-built Tailwind CSS for Docker
-# /app/assets/builds/*
-# !/app/assets/builds/.keep
+/app/assets/builds/*
+!/app/assets/builds/.keep
 
 # Ignore macOS system files
 .DS_Store
