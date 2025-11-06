@@ -49,6 +49,9 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H 167.234.221.119 >> ~/.ssh/known_hosts
+          echo "Host *" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking accept-new" >> ~/.ssh/config
+          echo "  UserKnownHostsFile ~/.ssh/known_hosts" >> ~/.ssh/config
 
       - name: Install Kamal
         run: gem install kamal -v 2.7.0
